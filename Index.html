@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim Phong Tro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="js/style.js"></script>
+</head>
+<body>
+        <header>
+            <div class="container-fluid header_bar">
+                <div class="row">
+                    <div class="header_logo col-6  col-md-8 col-lg-2">
+                        <img class="img-fluid" alt="Responsive image" src="images/logo_header.png">
+                    </div>
+                    <div class="header_search col-12 col-md-12 col-lg-8">
+                        <div class="search_bar">
+                            <div class="search_field">
+                                <input type="text" placeholder="Nhập tên Quận/Huyện,Phường/Xã,Đường,hoặc Tỉnh/Thành... " >
+                            </div>
+                            <div class="search">
+                                <div class="filter" style="float: left">
+                                    <img class="ic_filter" src="images/icons/ic_filter.png" alt="ic filter"><span>Bộ Lọc</span>
+                                    <p>Bộ Lọc</p>
+                                </div>
+                                <div style="float: left;margin-left: 15px">
+                                    <input type="submit" class="btn" id="btn_search" value="Tìm Kiếm">
+                                </div>
+                                <div style="clear: both"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="put_up col-6 col-md-4 col-lg-2">
+                        <div class="icon_put_up">
+                            <img src="images/icons/ic_post.png">
+                            <p>Đăng tin</p>
+                        </div>
+                        <div class="icon_avatar">
+                            <img src="images/avatar.png">
+                            <p>Tài khoản</p>
+                        </div>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <nav class="navbar navbar-expand-md navbar-light menu-header">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar" style="margin-top: 4px"></span>
+                            <span class="icon-bar" style="margin-top: 4px"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Tất cả</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Phòng Trọ</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Nhà Trọ</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Căn Hộ</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Mặt Bằng</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Người ở ghép</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="content_index">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="hot_news_index">
+                        <div class="title">
+                            <h5>Tin nổi bật <span> ( 153 )</span></h5>
+                        </div>
+                        <div class="hot_news_content col-12 col-md-10 offset-md-1">
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_marked.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="see_more">
+                                <button class="btn">Xem thêm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="motel_room_index">
+                        <div class="title">
+                            <h5>Phòng trọ <span> ( 12457 )</span></h5>
+                        </div>
+                        <div class="motel_room_content col-12 col-md-10 offset-md-1">
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_marked.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="see_more">
+                                <button class="btn">Xem thêm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="motel_index">
+                        <div class="title">
+                            <h5>Nhà Trọ <span> ( 1243 )</span></h5>
+                        </div>
+                        <div class="motel_content col-12 col-md-10 offset-md-1">
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_marked.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="see_more">
+                                <button class="btn">Xem thêm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="apartment_index">
+                        <div class="title">
+                            <h5>Căn Hộ <span> ( 1243 )</span></h5>
+                        </div>
+                        <div class="apartment_content col-12 col-md-10 offset-md-1">
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_marked.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="see_more">
+                                <button class="btn">Xem thêm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ground_index">
+                        <div class="title">
+                            <h5>Mặt bằng <span> ( 1243 )</span></h5>
+                        </div>
+                        <div class="ground_content col-12 col-md-10 offset-md-1">
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_marked.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="see_more">
+                                <button class="btn">Xem thêm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="people_grafts_index">
+                        <div class="title">
+                            <h5>Người ở ghép <span> ( 1243 )</span></h5>
+                        </div>
+                        <div class="people_grafts_content col-12 col-md-10 offset-md-1">
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_marked.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="items col-12 col-sm-6 col-lg-4">
+                                <div class="content_item">
+                                    <a href="#">
+                                        <div class="image_item">
+                                            <div class="price_item">
+                                                <p>5.5 triệu</p>
+                                                <span>đ/tháng</span>
+                                            </div>
+                                            <div class="icon_find_house"></div>
+                                            <div class="summary_item">
+                                                <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                                <div class="content_icons_item">
+                                                    <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                                    <span><img src="images/icons/ic_toilet.png">  2</span>
+                                                    <span class="type_item">Phòng trọ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="info_item">
+                                            <div>
+                                                <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                                <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                            <div>
+                                                <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                                <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="see_more">
+                                <button class="btn">Xem thêm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6 col-md-3 col-lg-3 logo_footer">
+                        <div class="website_logo">
+                            <img src="images/logo_footer.png">
+                            <p>Copyright @2018</p>
+                        </div>
+                        <div class="company_logo">
+                            <img src="images/logo_bsp.png">
+                            <p>Phát triển bởi BSP Corp.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2 about_us_footer">
+                        <ul>
+                            <li><a href="#">Về Chúng tôi</a></li>
+                            <li><a href="#">Liên hệ chúng tôi</a></li>
+                            <li><a href="#">Điều khoản sử dụng</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-4 follow_share_footer">
+                        <div class ="col-12 col-md-12 col-lg-6 follow_us">
+                            <p>Theo dõi</p>
+                            <p>chúng tôi trên</p>
+                            <div class="icons_social">
+                                <a href="#">
+                                    <span style="margin-right: 5px">
+                                    <img src="images/btn/btn_f_white.png" onmouseover="this.src='images/btn/btn_f.png'" onmouseout="this.src='images/btn/btn_f_white.png'">
+                                    </span>
+                                </a>
+                                <a href="#">
+                                    <span>
+                                        <img src="images/btn/btn_g_plus_white.png" onmouseover="this.src='images/btn/btn_g_plus.png'" onmouseout="this.src='images/btn/btn_g_plus_white.png'">
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class ="col-12 col-md-12 col-lg-6 like_share">
+                            <div>
+                                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fbsp.vn%2F&width=134&layout=button_count&action=like&size=small&show_faces=false&share=true&height=46&appId"
+                                        width="134" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                            </div>
+                            <div class="g-follow" data-annotation="none" data-height="24" data-href="//plus.google.com/u/0/100858742093146937924" data-rel="author"></div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-3 download_app_footer">
+                        <p style="color: #fff;margin-bottom: 7px">Tải ứng dụng</p>
+                        <p style="color: #02eefc;margin-bottom: 7px">KIẾM NHÀ TRỌ ngay</p>
+                        <div style="margin-bottom: 9px">
+                            <img src="images/btn/btn_app_store.png">
+                        </div>
+                        <div>
+                            <img src="images/btn/btn_google_play.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

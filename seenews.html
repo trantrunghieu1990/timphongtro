@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xem tin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- Syntax Highlighter -->
+    <!-- Demo CSS -->
+    <!--<link rel="stylesheet" href="css/demo.css" type="text/css" media="screen" />-->
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+
+    <!-- Modernizr -->
+    <script src="js/modernizr.js"></script>
+    <script src='js/jquery.matchHeight.js'></script>
+    <script src="js/style.js"></script>
+</head>
+<body>
+    <header>
+        <div class="cd-popup">
+
+        </div>
+    <div class="container-fluid header_bar">
+        <div class="row">
+            <div class="header_logo col-6  col-md-8 col-lg-2">
+                <img class="img-fluid" alt="Responsive image" src="images/logo_header.png">
+            </div>
+            <div class="header_search col-12 col-md-12 col-lg-8">
+                <div class="search_bar">
+                    <div class="search_field">
+                        <input type="text" placeholder="Nhập tên Quận/Huyện,Phường/Xã,Đường,hoặc Tỉnh/Thành... " >
+                    </div>
+                    <div class="search">
+                        <div class="filter" style="float: left">
+                            <img class="ic_filter" src="images/icons/ic_filter.png" alt="ic filter"><span>Bộ Lọc</span>
+                            <p>Bộ Lọc</p>
+                        </div>
+                        <div style="float: left;margin-left: 15px">
+                            <input type="submit" class="btn" id="btn_search" value="Tìm Kiếm">
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="put_up col-6 col-md-4 col-lg-2">
+                <div class="icon_put_up">
+                    <img src="images/icons/ic_post.png">
+                    <p>Đăng tin</p>
+                </div>
+                <div class="icon_avatar">
+                    <img src="images/avatar.png">
+                    <p>Tài khoản</p>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-md navbar-light menu-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar" style="margin-top: 4px"></span>
+                    <span class="icon-bar" style="margin-top: 4px"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Tất cả</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Phòng Trọ</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Nhà Trọ</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Căn Hộ</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Mặt Bằng</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Người ở ghép</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <div class="content_see_news">
+    <div class="container-fluid">
+        <div class="row">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item" style="text-transform: uppercase"><a href="#">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="#">Phòng trọ</a></li>
+                <li class="breadcrumb-item"><a href="#">Tp.HCM</a></li>
+                <li class="breadcrumb-item"><a href="#">Quận 8</a></li>
+            </ul>
+            <div class="see_news">
+                <div class="wards col-12 col-lg-3">
+                    <div class="list_wards">
+                        <div class="title_list_wards">
+                            <img src="images/icons/ic_home.png"> <span>Tại Quận 8</span>
+                        </div>
+                        <div class="content_list_wards">
+                            <ul>
+                                <li><a href="#">Phường 1 , Quận 8</a></li>
+                                <li><a href="#">Phường 2 , Quận 8</a></li>
+                                <li><a href="#">Phường 3 , Quận 8</a></li>
+                                <li><a href="#">Phường 4 , Quận 8</a></li>
+                                <li><a href="#">Phường 5 , Quận 8</a></li>
+                                <li><a href="#">Phường 6 , Quận 8</a></li>
+                                <li><a href="#">Phường 7 , Quận 8</a></li>
+                                <li><a href="#">Phường 8 , Quận 8</a></li>
+                                <li><a href="#">Phường 9 , Quận 8</a></li>
+                                <li><a href="#">Phường 10 , Quận 8</a></li>
+                                <li><a href="#">Phường 11 , Quận 8</a></li>
+                                <li><a href="#">Phường 12 , Quận 8</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="news col-12 col-lg-9">
+                    <div class="info_news">
+                        <p class="title_news">Cho thuê phòng trọ cao cấp, đầy đủ nội thất, ngay cầu Nguyễn Văn Cừ , Q.8 </p>
+                        <div>
+                            <div class="save_news">
+                                <img src="images/icons/ic_no_mark.png"><span> Lưu tin</span>
+                            </div>
+                            <div class="share_news">
+                                <span>Chia sẻ</span>
+                                <img src="images/btn/btn_f.png" onmouseover="this.src='images/btn/btn_f_hover.png'" onmouseout="this.src='images/btn/btn_f.png'">
+                                <img src="images/btn/btn_g_plus.png" onmouseover="this.src='images/btn/btn_g_plus_hover.png'" onmouseout="this.src='images/btn/btn_g_plus.png'">
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                        <div class="tab_list">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
+                                        <img src="images/icons/contact/ic_info.png" alt="info icon"> <span class="title_tab">THÔNG TIN CHI TIẾT</span>
+                                        <span class="arrow_down"></span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"  onclick=" activeSlider()">
+                                        <img src="images/icons/contact/ic_img.png" alt="img icon"> <span class="title_tab">HÌNH ẢNH</span>
+                                        <span class="arrow_down"></span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
+                                        <img src="images/icons/contact/ic_pin_on_map.png"> <span class="title_tab">BẢN ĐỒ VỊ TRÍ</span>
+                                        <span class="arrow_down"></span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
+                                        <img src="images/icons/contact/ic_contact_info.png"><span class="title_tab">THÔNG TIN LIÊN HỆ</span>
+                                        <span class="arrow_down"></span>
+                                    </a>
+                                </li>
+                            </ul><!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active info_detail" id="tabs-1" role="tabpanel">
+                                    <p class="address_detail">Hẻm 157 Đường Dương Bá Trạc,Phường 1,Quận 8,Hồ Chí Minh</p>
+                                    <p class="price_detail">5 triệu đ/tháng</p>
+                                    <div class="content_info_detail">
+                                        <div class="items_info">
+                                            <div class="item">
+                                                <img src="images/icons/ic_man.png"> <span class="title_type_info">Loại tin:</span> <span class="des_type_info">Phòng trọ</span>
+                                            </div>
+                                            <div class="item">
+                                                <img src="images/icons/ic_man.png"> <span class="title_type_info">Đối tượng:</span> <span class="des_type_info">Tất cả</span>
+                                            </div>
+                                            <div class="item">
+                                                <img src="images/icons/ic_street.png"> <span class="title_type_info">Đường:</span> <span class="des_type_info">Dương Bá Trạc</span>
+                                            </div>
+                                            <div class="item">
+                                                <img src="images/icons/ic_calendar.png"> <span class="title_type_info">Ngày cập nhật :</span> <span class="des_type_info">03/03/2018 08:30 PM</span>
+                                            </div>
+                                            <div class="item">
+                                                <img src="images/icons/ic_area_blue.png"> <span class="title_type_info">Diện tích:</span> <span class="des_type_info">30 m2</span>
+                                            </div>
+                                            <div class="item">
+                                                <img src="images/icons/ic_toilet_blue.png"> <span class="title_type_info">Nhà vệ sinh:</span> <span class="des_type_info">2</span>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                        </div>
+                                        <div class="utilities">
+                                            <p class="utilities_title">Tiện ích</p>
+                                            <div class="list_utility">
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_balcony.png"> <span>Ban công</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_motobike.png"> <span>Chỗ để xe miễn phí</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_clock.png"> <span>Giờ tự do</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_mezzanine.png"> <span>Gác lửng</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_allow_cooking.png"> <span>Cho nấu ăn</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_stove.png"> <span>Bếp</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_sink.png"> <span>Bồn rửa chén</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_shower.png"> <span>Vòi sen</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_tub.png"> <span>Bồn tắm</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_hot_cold_shower.png"> <span>Máy tắm nóng lạnh</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_tap.png"> <span>Nước máy</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_washing_machine.png"> <span>Máy giặt</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_fridge.png"> <span>Tủ lạnh</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_air_conditional.png"> <span>Máy điều hòa</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_fan.png"> <span>Quạt máy</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_furniture.png"> <span>Bàn ghế</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_cabinet.png"> <span>Tủ quần áo</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_bed.png"> <span>Giường</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_tv.png"> <span>Tivi</span>
+                                                </div>
+                                                <div class="item_utility col-12 col-sm-6 col-md-4 col-lg-3">
+                                                    <img src="images/icons/utilities/ic_wifi.png"> <span>Internet/Wifi</span>
+                                                </div>
+                                                <div style="clear: both"></div>
+                                            </div>
+                                        </div>
+                                        <div class="description_detail">
+                                            <p class="description_title">Mô tả chi tiết</p>
+                                            <div class="description">
+                                                Cho thuê phòng trọ cao cấp,đầy đủ nội thất,đường Dương Bá Trạc, quận 8.Tp.HCM.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                    <div class="cf">
+                                        <div id="main" role="main">
+                                            <section class="slider">
+                                                <div id="slider" class="flexslider">
+                                                    <ul class="slides">
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_cheesecake_brownie.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_lemon.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_donut.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_caramel.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_cheesecake_brownie.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_lemon.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_donut.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_caramel.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_cheesecake_brownie.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_lemon.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_donut.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_caramel.jpg" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div id="carousel" class="flexslider">
+                                                    <ul class="slides">
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_cheesecake_brownie.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_lemon.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_donut.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_caramel.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_cheesecake_brownie.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_lemon.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_donut.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_caramel.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_cheesecake_brownie.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_lemon.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_donut.jpg" />
+                                                        </li>
+                                                        <li>
+                                                            <img src="images/kitchen_adventurer_caramel.jpg" />
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </section>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                    <p>Third Panel</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="related_news col-12">
+                <div class="related_title">
+                    <img src="images/icons/ic_hand.png" alt="ic hand"> <span>Có thể bạn quan tâm</span>
+                </div>
+                <div class="content_related_news">
+                    <div class="items col-12 col-sm-6 col-lg-3">
+                        <div class="content_item">
+                            <a href="#">
+                                <div class="image_item">
+                                    <div class="price_item">
+                                        <p>5.5 triệu</p>
+                                        <span>đ/tháng</span>
+                                    </div>
+                                    <div class="icon_find_house"></div>
+                                    <div class="summary_item">
+                                        <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                        <div class="content_icons_item">
+                                            <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                            <span><img src="images/icons/ic_toilet.png">  2</span>
+                                            <span class="type_item">Phòng trọ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info_item">
+                                    <div>
+                                        <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                        <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                    <div>
+                                        <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                        <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="items col-12 col-sm-6 col-lg-3">
+                        <div class="content_item">
+                            <a href="#">
+                                <div class="image_item">
+                                    <div class="price_item">
+                                        <p>5.5 triệu</p>
+                                        <span>đ/tháng</span>
+                                    </div>
+                                    <div class="icon_find_house"></div>
+                                    <div class="summary_item">
+                                        <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                        <div class="content_icons_item">
+                                            <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                            <span><img src="images/icons/ic_toilet.png">  2</span>
+                                            <span class="type_item">Phòng trọ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info_item">
+                                    <div>
+                                        <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                        <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                    <div>
+                                        <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                        <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="items col-12 col-sm-6 col-lg-3">
+                        <div class="content_item">
+                            <a href="#">
+                                <div class="image_item">
+                                    <div class="price_item">
+                                        <p>5.5 triệu</p>
+                                        <span>đ/tháng</span>
+                                    </div>
+                                    <div class="icon_find_house"></div>
+                                    <div class="summary_item">
+                                        <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                        <div class="content_icons_item">
+                                            <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                            <span><img src="images/icons/ic_toilet.png">  2</span>
+                                            <span class="type_item">Phòng trọ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info_item">
+                                    <div>
+                                        <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                        <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                    <div>
+                                        <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                        <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="items col-12 col-sm-6 col-lg-3">
+                        <div class="content_item">
+                            <a href="#">
+                                <div class="image_item">
+                                    <div class="price_item">
+                                        <p>5.5 triệu</p>
+                                        <span>đ/tháng</span>
+                                    </div>
+                                    <div class="icon_find_house"></div>
+                                    <div class="summary_item">
+                                        <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                        <div class="content_icons_item">
+                                            <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                            <span><img src="images/icons/ic_toilet.png">  2</span>
+                                            <span class="type_item">Phòng trọ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info_item">
+                                    <div>
+                                        <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                        <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                    <div>
+                                        <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                        <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="items col-12 col-sm-6 col-lg-3">
+                        <div class="content_item">
+                            <a href="#">
+                                <div class="image_item">
+                                    <div class="price_item">
+                                        <p>5.5 triệu</p>
+                                        <span>đ/tháng</span>
+                                    </div>
+                                    <div class="icon_find_house"></div>
+                                    <div class="summary_item">
+                                        <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                        <div class="content_icons_item">
+                                            <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                            <span><img src="images/icons/ic_toilet.png">  2</span>
+                                            <span class="type_item">Phòng trọ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info_item">
+                                    <div>
+                                        <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                        <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                    <div>
+                                        <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                        <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="items col-12 col-sm-6 col-lg-3">
+                        <div class="content_item">
+                            <a href="#">
+                                <div class="image_item">
+                                    <div class="price_item">
+                                        <p>5.5 triệu</p>
+                                        <span>đ/tháng</span>
+                                    </div>
+                                    <div class="icon_find_house"></div>
+                                    <div class="summary_item">
+                                        <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                        <div class="content_icons_item">
+                                            <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                            <span><img src="images/icons/ic_toilet.png">  2</span>
+                                            <span class="type_item">Phòng trọ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info_item">
+                                    <div>
+                                        <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                        <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                    <div>
+                                        <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                        <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="items col-12 col-sm-6 col-lg-3">
+                        <div class="content_item">
+                            <a href="#">
+                                <div class="image_item">
+                                    <div class="price_item">
+                                        <p>5.5 triệu</p>
+                                        <span>đ/tháng</span>
+                                    </div>
+                                    <div class="icon_find_house"></div>
+                                    <div class="summary_item">
+                                        <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                        <div class="content_icons_item">
+                                            <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                            <span><img src="images/icons/ic_toilet.png">  2</span>
+                                            <span class="type_item">Phòng trọ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info_item">
+                                    <div>
+                                        <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                        <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                    <div>
+                                        <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                        <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="items col-12 col-sm-6 col-lg-3">
+                        <div class="content_item">
+                            <a href="#">
+                                <div class="image_item">
+                                    <div class="price_item">
+                                        <p>5.5 triệu</p>
+                                        <span>đ/tháng</span>
+                                    </div>
+                                    <div class="icon_find_house"></div>
+                                    <div class="summary_item">
+                                        <span class="title_summary_item">Phòng trọ 30m2 full tiện nghi,an ninh trung tâm Tô Hiến Thành</span>
+                                        <div class="content_icons_item">
+                                            <span><img src="images/icons/ic_area_white.png">  30 m²</span>
+                                            <span><img src="images/icons/ic_toilet.png">  2</span>
+                                            <span class="type_item">Phòng trọ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info_item">
+                                    <div>
+                                        <span class="street_name"><img src="images/icons/ic_street.png" alt="ic street">  Tô Hiến Thành</span>
+                                        <span class="post_date"> 2/12/2017   04:52 PM</span>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                    <div>
+                                        <span class="address"><img src="images/icons/ic_pin_small.png">  Quận 10, Tp.Hồ Chí Minh</span>
+                                        <span class="liked"><img src="images/icons/ic_no_mark.png"></span>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    <footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 col-md-3 col-lg-3 logo_footer">
+                <div class="website_logo">
+                    <img src="images/logo_footer.png">
+                    <p>Copyright @2018</p>
+                </div>
+                <div class="company_logo">
+                    <img src="images/logo_bsp.png">
+                    <p>Phát triển bởi BSP Corp.</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2 about_us_footer">
+                <ul>
+                    <li><a href="#">Về Chúng tôi</a></li>
+                    <li><a href="#">Liên hệ chúng tôi</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-3 col-lg-4 follow_share_footer">
+                <div class ="col-12 col-md-12 col-lg-6 follow_us">
+                    <p>Theo dõi</p>
+                    <p>chúng tôi trên</p>
+                    <div class="icons_social">
+                        <a href="#">
+                                    <span style="margin-right: 5px">
+                                    <img src="images/btn/btn_f_white.png" onmouseover="this.src='images/btn/btn_f.png'" onmouseout="this.src='images/btn/btn_f_white.png'">
+                                    </span>
+                        </a>
+                        <a href="#">
+                                    <span>
+                                        <img src="images/btn/btn_g_plus_white.png" onmouseover="this.src='images/btn/btn_g_plus.png'" onmouseout="this.src='images/btn/btn_g_plus_white.png'">
+                                    </span>
+                        </a>
+                    </div>
+                </div>
+                <div class ="col-12 col-md-12 col-lg-6 like_share">
+                    <div>
+                        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fbsp.vn%2F&width=134&layout=button_count&action=like&size=small&show_faces=false&share=true&height=46&appId"
+                                width="134" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                    <div class="g-follow" data-annotation="none" data-height="24" data-href="//plus.google.com/u/0/100858742093146937924" data-rel="author"></div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 download_app_footer">
+                <p style="color: #fff;margin-bottom: 7px">Tải ứng dụng</p>
+                <p style="color: #02eefc;margin-bottom: 7px">KIẾM NHÀ TRỌ ngay</p>
+                <div style="margin-bottom: 9px">
+                    <img src="images/btn/btn_app_store.png">
+                </div>
+                <div>
+                    <img src="images/btn/btn_google_play.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+
+    <!-- FlexSlider -->
+    <script defer src="js/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+            $(function(){
+                SyntaxHighlighter.all();
+            });
+            $(window).load(function(){
+                $('#carousel').flexslider({
+                    animation: "slide",
+                    controlNav: false,
+                    animationLoop: false,
+                    slideshow: false,
+                    itemWidth: 210,
+                    itemMargin: 5,
+                    asNavFor: '#slider'
+                });
+
+                $('#slider').flexslider({
+                    animation: "slide",
+                    controlNav: false,
+                    animationLoop: false,
+                    slideshow: false,
+                    sync: "#carousel",
+                    start: function(slider){
+                        $('body').removeClass('loading');
+                    }
+                });
+            });
+        });
+        function  activeSlider() {
+            var src = "js/jquery.flexslider.js";
+            $('script[src="' + src + '"]').remove();
+            $('<script>').attr('src', src).appendTo('head');
+        }
+
+    </script>
+    <!-- Syntax Highlighter -->
+    <script type="text/javascript" src="js/shCore.js"></script>
+    <script type="text/javascript" src="js/shBrushXml.js"></script>
+    <script type="text/javascript" src="js/shBrushJScript.js"></script>
+
+    <!-- Optional FlexSlider Additions -->
+    <script src="js/jquery.easing.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script defer src="js/demo.js"></script>
+</body>
+</html>
