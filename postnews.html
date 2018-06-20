@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng tin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADVtnbKvrQYas4qz_ugtEKhit1bvnH9zQ&amp"></script>-->
+    <!-- Syntax Highlighter -->
+    <!-- Demo CSS -->
+    <!--<link rel="stylesheet" href="css/demo.css" type="text/css" media="screen" />-->
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+
+    <!-- Modernizr -->
+    <script src="js/modernizr.js"></script>
+    <script src='js/jquery.matchHeight.js'></script>
+    <script src="js/style.js"></script>
+</head>
+<body>
+    <header>
+    <!-- Popup thông tin nguoi dung -->
+    <div class="cd-popup">
+        <div class="list_menu_info_popup">
+            <ul>
+                <li><a href="#"><img src="images/icons/ic_profile.png" alt="thong tin tai khoan"><span>Thông tin tài khoản</span></a></li>
+                <li><a href="#"><img src="images/icons/ic_manage_posted.png" alt="quan ly tin dang"><span>Quản lý tin đăng</span></a></li>
+                <li><a href="#"><img src="images/icons/ic_marked_small.png" alt="tin da luu"><span>Tin đã lưu</span></a></li>
+                <li><a href="#"><img src="images/icons/ic_logout.png" alt="thoat"><span>Thoát</span></a></li>
+            </ul>
+        </div>
+        <div class="arrow_up"></div>
+    </div>
+    <!-- Modal popup -->
+    <div class="content_register modal" id="registerModal">
+        <div class="container">
+            <div class="row">
+                <div class="register col-12">
+                    <div class="register_header">
+                        <div class="register_title">
+                            <h5>Đăng ký</h5>
+                        </div>
+                    </div>
+                    <div class="register_body">
+                        <div class="register_original col-12 col-sm-7">
+                            <form id="register_form" action="" method="post">
+                                <div>
+                                    <input class="validateFields" type="text" name="tên đăng nhập" id="user_name" placeholder="Họ tên">
+                                    <p class="show_errors_js"></p>
+                                </div>
+                                <div>
+                                    <input class="validateFields" type="email" name="email" id="email" placeholder="Email">
+                                    <p class="show_errors_js"></p>
+                                </div>
+                                <div>
+                                    <input class="validateFields" type="password" name="mật khẩu" id="password" placeholder="mật khẩu">
+                                    <p class="show_errors_js"></p>
+                                </div>
+                                <div>
+                                    <p style="font-size: 12pt">Bằng việc bấm nút TẠO TÀI KHOẢN , bạn đã đồng ý với <a href="" style="font-size: 12pt;text-decoration: none;color:#04638f;text-transform: uppercase">Điều khoản sử dụng</a> của chúng tôi</p>
+                                </div>
+                                <div>
+                                    <div class="g-recaptcha" data-sitekey="6Lfrf1wUAAAAACnChw2AuK24vbca77EsIX1i6Z6g"></div>
+                                </div>
+                                <div>
+                                    <input type="button" value="Tạo Tài Khoản" class="btn_login" onclick=" validateForm('register_form')">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="register_social col-12 col-sm-5">
+                            <div class="list_social">
+                                <p>--- Hoặc ---</p>
+                                <ul>
+                                    <li>
+                                        <img src="images/btn/btn_f_hover.png">
+                                    </li>
+                                    <li>
+                                        <img src="images/btn/btn_g_plus_hover.png">
+                                    </li>
+                                </ul>
+                            </div>
+                            <p style="font-size: 14pt;font-weight: bold;color:#fe0202">Với việc tạo một tài khoản duy nhất, bạn có thể:</p>
+                            <ul style="padding-left: 0">
+                                <li>
+                                    <p style="font-size: 14pt;color: #333"> <i>*</i> Rao tin CHO THUÊ PHÒNG TRỌ / NHÀ/ CĂN HỘ/ MẶT BẰNG/ TÌM NGƯỜI Ở GHÉP mà chẳng tốn chi phí đăng.</p>
+                                </li>
+                                <li>
+                                    <p style="font-size: 14pt;color: #333"> <i>*</i> Hoặc LƯU TIN PHÙ HỢP với mục đích tìm kiếm của bạn.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                    <div class="register_footer">
+                        <p>Bạn đã có tài khoản ?</p>
+                        <a href="#" id="link_login">Đăng nhập ngay</a>
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid header_bar">
+        <div class="row">
+            <div class="header_logo col-6  col-md-8 col-lg-2">
+                <img class="img-fluid" alt="Responsive image" src="images/logo_header.png">
+            </div>
+            <div class="header_search col-12 col-md-12 col-lg-8">
+                <div class="search_bar">
+                    <div class="search_field">
+                        <input type="text" placeholder="Nhập tên Quận/Huyện,Phường/Xã,Đường,hoặc Tỉnh/Thành... " >
+                    </div>
+                    <div class="search">
+                        <div class="filter" style="float: left">
+                            <img class="ic_filter" src="images/icons/ic_filter.png" alt="ic filter"><span>Bộ Lọc</span>
+                            <p>Bộ Lọc</p>
+                        </div>
+                        <div style="float: left;margin-left: 15px">
+                            <input type="submit" class="btn" id="btn_search" value="Tìm Kiếm">
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="put_up col-6 col-md-4 col-lg-2">
+                <div class="icon_put_up">
+                    <img src="images/icons/ic_post.png">
+                    <p>Đăng tin</p>
+                </div>
+
+                 <!--nếu có tải khoản đăng nhập rồi -->
+                <div class="icon_avatar has_logged">
+                <img src="images/avatar.png">
+                <p>Tài khoản</p>
+                </div>
+
+                <!-- nếu chưa có tài khoản đăng nhập -->
+                <!--<div class="icon_avatar" data-toggle="modal" data-target="#registerModal">-->
+                    <!--<img src="images/avatar.png">-->
+                    <!--<p>Tài khoản</p>-->
+                <!--</div>-->
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-md navbar-light menu-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar" style="margin-top: 4px"></span>
+                    <span class="icon-bar" style="margin-top: 4px"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Tất cả</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Phòng Trọ</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Nhà Trọ</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Căn Hộ</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Mặt Bằng</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Người ở ghép</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <div class = "content_postnews">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="postnews col-12">
+                    <div class="postnews_header col-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3">
+                        <div class="postnews_title">
+                            <h5>Đăng tin</h5>
+                        </div>
+                    </div>
+                    <div class="postnews_body ">
+                        <div class="form_postnews ">
+                            <form action="" method="post">
+                                <div class="form_part_1">
+                                    <div class="title col-12 col-md-10 offset-md-1">
+                                        <img src="images/icons/contact/ic_info_selected.png"><span>Thông tin chi tiết</span>
+                                    </div>
+                                    <div class="col-12 col-md-10 offset-md-1">
+                                        <div class="col-12 col-sm-6 fields_form">
+                                            <label for="title_news" class="label_fields">Tiêu đề <span style="color: red">*</span></label>
+                                            <input type="text" id="title_news" name ="title_news" >
+                                        </div>
+                                        <div class="col-12 col-sm-6 fields_form">
+                                            <label class="label_fields">Loại tin <span style="color: red">*</span></label>
+                                            <select>
+                                                <option>Phòng trọ</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-sm-6 fields_form">
+                                            <label class="label_fields">Giới tính <span style="color: red">*</span></label>
+                                            <select>
+                                                <option value="all">Tất cả</option>
+                                                <option value="name">Nam</option>
+                                                <option value="nu">Nữ</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-sm-6 fields_form">
+                                            <label class="label_fields" for="acreage_news">Diện tích <span style="color: red">*</span></label>
+                                            <input type="text" id="acreage_news" name ="acreage_news" > <span>m²</span>
+                                        </div>
+                                        <div class="col-12 col-sm-6 fields_form">
+                                            <label class="label_fields" for="price_news">Giá <span style="color: red">*</span></label>
+                                            <input type="text" id="price_news" name ="price_news" > <span>triệu đ/tháng</span>
+                                        </div>
+                                        <div class="col-12 col-sm-6 fields_form number_toilet">
+                                            <label class="label_fields" for="price_news">Số nhà vệ sinh <span style="color: red;position: static">*</span></label>
+                                            <ul>
+                                                <li>
+                                                    <label>
+                                                        <input  class="ip_toilet" type="radio" name="toilet" value="bk" checked/>
+                                                        <span style="font-size: 9px">Bất</br>kỳ</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="ip_toilet" type="radio" name="toilet" value="1"/>
+                                                        <span>1</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="ip_toilet" type="radio" name="toilet" value="2"/>
+                                                        <span>2</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="ip_toilet" type="radio" name="toilet" value="3"/>
+                                                        <span>3</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="ip_toilet" type="radio" name="toilet" value="4"/>
+                                                        <span>4</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="ip_toilet" type="radio" name="toilet" value="5"/>
+                                                        <span>5</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="ip_toilet" type="radio" name="toilet" value="6"/>
+                                                        <span>6</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="ip_toilet" type="radio" name="toilet" value="7"/>
+                                                        <span>7</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="ip_toilet" type="radio" name="toilet" value="8"/>
+                                                        <span>8</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="ip_toilet" type="radio" name="toilet" value="9"/>
+                                                        <span>9</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="ip_toilet" type="radio" name="toilet" value="10"/>
+                                                        <span>10</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div style="clear: both"></div>
+                                        <div class="col-12 utilities_fields">
+                                            <label class="label_fields" for="title_news">Tiện ích </label>
+                                            <div class="col-6 col-md-3 col-lg-2 item_uti_field">
+                                                <input type="checkbox" id="uti_balcony" name="uti_balcony">
+                                                <label for="uti_balcony">Ban Công</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_parking" name="uti_parkingy">
+                                                <label for="uti_parking">Để xe miễn phí</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_freetime" name="uti_freetime">
+                                                <label for="uti_freetime">Giờ tự do</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_mezzanine" name="uti_mezzanine">
+                                                <label for="uti_mezzanine">Gác lửng</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_cooking" name="uti_cooking">
+                                                <label for="uti_cooking">Cho nấu ăn</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_kitchen" name="uti_kitchen">
+                                                <label for="uti_kitchen">Bếp</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_sink" name="uti_sink">
+                                                <label for="uti_sink">Bồn rửa chén</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_shower" name="uti_shower">
+                                                <label for="uti_shower">Vòi sen</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_bathtub" name="uti_bathtub">
+                                                <label for="uti_bathtub">Bồn tắm</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_hotcoldshower" name="uti_hotcoldshowerathtub">
+                                                <label for="uti_hotcoldshower">Máy tắm nóng lạnh</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_machinewater" name="uti_machinewater">
+                                                <label for="uti_machinewater">Nước máy</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_washing" name="uti_washing">
+                                                <label for="uti_washing">Máy giặt</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_fridge" name="uti_fridge">
+                                                <label for="uti_fridge">Tủ lạnh</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_air_conditioning" name="uti_air_conditioning">
+                                                <label for="uti_air_conditioning">Máy điều hòa</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_fan" name="uti_fan">
+                                                <label for="uti_fan">Quạt máy</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_furniture" name="uti_furniture">
+                                                <label for="uti_furniture">Bàn ghế</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_wardrobe" name="uti_wardrobe">
+                                                <label for="uti_wardrobe">Tủ quần áo</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_bed" name="uti_bed">
+                                                <label for="uti_bed">Giường</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_tivi" name="uti_tivi">
+                                                <label for="uti_tivi">Tivi</label>
+                                            </div>
+                                            <div class="col-6 col-md-3 col-lg-2  item_uti_field">
+                                                <input type="checkbox" id="uti_net" name="uti_net">
+                                                <label for="uti_net">Internet/Wifi</label>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                        </div>
+                                        <div class="col-12 description_fields">
+                                            <label class="label_fields" for="title_news">Mô tả chi tiết <span style="color:red">*</span></label>
+                                            <textarea style="width: 100%;resize: none;outline: none" rows="10" placeholder="Nhập nội dung" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="address_map form_part_2">
+                                    <div class="title col-12 col-md-10 offset-md-1">
+                                        <img src="images/icons/contact/ic_pin_on_map_selected.png"><span>Địa chỉ & bản đồ</span>
+                                    </div>
+                                    <div class="col-12 col-md-10 offset-md-1">
+                                        <div class="col-12 col-sm-6 fields_form">
+                                            <label class="label_fields">Tỉnh / Thành <span style="color: red">*</span></label>
+                                            <select>
+                                                <option> Tp.HCM </option>
+                                                <option> Hà Nội </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-sm-6 fields_form">
+                                            <label class="label_fields">Quận / Huyện <span style="color: red">*</span></label>
+                                            <select>
+                                                <option> Quận 1 </option>
+                                                <option> Quận 2 </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-sm-6 fields_form">
+                                            <label class="label_fields" for="address_field">Địa chỉ chính xác <span style="color: red">*</span></label>
+                                            <input type="text" id="address_field" name="address_field" placeholder="nhập địa chỉ chính xác">
+                                        </div>
+                                        <div style="clear: both"></div>
+                                        <div class="col-12" id="content_map_google">
+                                            <div class="col-12" id="map_google" style="width: 100%;height: 500px"></div>
+                                            <div id="address"><p></p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form_part_3">
+                                    <div class="title col-12 col-md-10 offset-md-1">
+                                        <img src="images/icons/contact/ic_img_selected.png"><span>Hình ảnh</span>
+                                    </div>
+                                    <div class="uploadOuter col-12  col-md-10 offset-md-1">
+                                        <span class="dragBox col-10 offset-1 col-sm-6 offset-sm-3 col-lg-4 offset-lg-4">
+                                        <input type="file" onChange="dragNdrop(event)" id="uploadFile"  />
+                                        </span>
+                                        <div class="show_error_image" style="text-align: center"><span style="color: #fe0202;font-size: 12px"></span></div>
+                                        <div id="preview">
+
+                                        </div>
+                                        <div style="clear: both"></div>
+                                    </div>
+
+                                </div>
+                                <div class="form_part_4">
+                                    <div class="title col-12 col-md-10 offset-md-1">
+                                        <img src="images/icons/contact/ic_contact_info_selected.png"><span>Thông tin liên hệ</span>
+                                    </div>
+                                    <div class="col-12 col-md-10 offset-md-1">
+                                        <div class="col-12 col-sm-6 fields_form">
+                                            <label for="person_contact" class="label_fields">Người liên hệ <span style="color: red">*</span></label>
+                                            <input type="text" id="person_contact" name ="person_contact"  placeholder="Nhập tên người liên hệ">
+                                        </div>
+                                        <div class="col-12 col-sm-6 fields_form">
+                                            <label for="email_contact" class="label_fields">Email liên hệ <span style="color: red">*</span></label>
+                                            <input type="text" id="email_contact" name ="email_contact" placeholder="Nhập email liên hệ">
+                                        </div>
+                                        <div class="col-12 col-sm-6 fields_form">
+                                            <label for="phone_contact" class="label_fields">Điện thoại liên hệ <span style="color: red">*</span></label>
+                                            <input type="text" id="phone_contact" name ="phone_contact" placeholder="Nhập số điện thoại liên hệ">
+                                        </div>
+                                        <div class="col-12 col-sm-6 fields_form">
+                                            <label for="address_contact" class="label_fields" >Địa chỉ liên hệ <span style="color: red">*</span></label>
+                                            <input type="text" id="address_contact" name ="address_contact" placeholder="Nhập địa chỉ liên hệ" >
+                                        </div>
+                                        <div style="clear: both"></div>
+                                    </div>
+                                </div>
+                                <div class="form_part_5">
+                                        <div class="g-recaptcha" data-sitekey="6Lfrf1wUAAAAACnChw2AuK24vbca77EsIX1i6Z6g"></div>
+                                        <button class="btn_login">Đăng tin ngay</button>
+                                </div>
+                                <div style="clear: both"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 col-md-3 col-lg-3 logo_footer">
+                <div class="website_logo">
+                    <img src="images/logo_footer.png">
+                    <p>Copyright @2018</p>
+                </div>
+                <div class="company_logo">
+                    <img src="images/logo_bsp.png">
+                    <p>Phát triển bởi BSP Corp.</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2 about_us_footer">
+                <ul>
+                    <li><a href="#">Về Chúng tôi</a></li>
+                    <li><a href="#">Liên hệ chúng tôi</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-3 col-lg-4 follow_share_footer">
+                <div class ="col-12 col-md-12 col-lg-6 follow_us">
+                    <p>Theo dõi</p>
+                    <p>chúng tôi trên</p>
+                    <div class="icons_social">
+                        <a href="#">
+                                    <span style="margin-right: 5px">
+                                    <img src="images/btn/btn_f_white.png" onmouseover="this.src='images/btn/btn_f.png'" onmouseout="this.src='images/btn/btn_f_white.png'">
+                                    </span>
+                        </a>
+                        <a href="#">
+                                    <span>
+                                        <img src="images/btn/btn_g_plus_white.png" onmouseover="this.src='images/btn/btn_g_plus.png'" onmouseout="this.src='images/btn/btn_g_plus_white.png'">
+                                    </span>
+                        </a>
+                    </div>
+                </div>
+                <div class ="col-12 col-md-12 col-lg-6 like_share">
+                    <div>
+                        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fbsp.vn%2F&width=134&layout=button_count&action=like&size=small&show_faces=false&share=true&height=46&appId"
+                                width="134" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                    <div class="g-follow" data-annotation="none" data-height="24" data-href="//plus.google.com/u/0/100858742093146937924" data-rel="author"></div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-3 download_app_footer">
+                <p style="color: #fff;margin-bottom: 7px">Tải ứng dụng</p>
+                <p style="color: #02eefc;margin-bottom: 7px">KIẾM NHÀ TRỌ ngay</p>
+                <div style="margin-bottom: 9px">
+                    <img src="images/btn/btn_app_store.png">
+                </div>
+                <div>
+                    <img src="images/btn/btn_google_play.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg7Rtzf7Z3n3ZOU85Xka0ZCYgh4syh-PU&callback=initMap&libraries=places&amp&sensor=false&libraries=places&sensor=false" async defer></script>
+    <script type="text/javascript">
+        function initMap() {
+            var geocoder = new google.maps.Geocoder();
+                var myLatLng={ lat: 16.0544068,
+                    lng: 108.2021667};
+                var map = new google.maps.Map(document.getElementById('map_google'), {
+                    zoom: 16,
+                    center: myLatLng
+                });
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    icon: "images/icons/ic_red_pin.png"
+                });
+
+                var input = document.getElementById('address_field');
+
+                var autocomplete = new google.maps.places.Autocomplete(input);
+                autocomplete.bindTo('bounds', map);
+
+                //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+                var infowindow = new google.maps.InfoWindow();
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+
+                autocomplete.addListener('place_changed', function() {
+                    jQuery("div#content_map_google div#address p").html(input.value);
+                    infowindow.close();
+                    var place = autocomplete.getPlace();
+
+                    if (!place.geometry) {
+                        return;
+                    }
+
+                    if (place.geometry.viewport) {
+                        map.fitBounds(place.geometry.viewport);
+                    } else {
+                        map.setCenter(place.geometry.location);
+                        map.setZoom(17);
+                    }
+
+                    // Set the position of the marker using the place ID and location.
+                    marker.setPlace({
+                        placeId: place.place_id,
+                        location: place.geometry.location
+                    });
+                    marker.setVisible(true);
+
+                    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                        'Place ID: ' + place.place_id + '<br>' +
+                        place.formatted_address);
+                    infowindow.open(map, marker);
+
+                    var service = new google.maps.places.PlacesService(map);
+
+                    var details_container = document.getElementById('details');
+
+                    service.getDetails({
+                        placeId: place.place_id
+                    }, function(place, status) {
+                        details_container.innerHTML = '<p><strong>Status:</strong> <code>' + status + '</code></p>' +
+                            '<p><strong>Place ID:</strong> <code>' + place.place_id + '</code></p>' +
+                            '<p><strong>Location:</strong> <code>' + place.geometry.location.lat() + ', ' + place.geometry.location.lng() + '</code></p>' +
+
+                            '<p><strong>Formatted address:</strong> <code>' + place.formatted_address + '</code></p>' +
+                            '<p><strong>GMap Url:</strong> <code>' + place.url + '</code></p>' +
+                            '<p><strong>Place details:</strong></p>' +
+                            '<pre>' + JSON.stringify(place, null, " ") + '</pre>';
+
+                    });
+
+                });
+
+        }
+    </script>
+    <script>
+            var time_current =   new Date().toLocaleDateString();
+            alert (time_current);
+    </script>
+</body>
+</html>

@@ -14,6 +14,42 @@
 </head>
 <body>
     <header>
+    <!-- Popup thông tin nguoi dung -->
+    <div class="cd-popup">
+        <div class="list_menu_info_popup">
+            <ul>
+                <li><a href="#"><img src="images/icons/ic_profile.png" alt="thong tin tai khoan"><span>Thông tin tài khoản</span></a></li>
+                <li><a href="#"><img src="images/icons/ic_manage_posted.png" alt="quan ly tin dang"><span>Quản lý tin đăng</span></a></li>
+                <li><a href="#"><img src="images/icons/ic_marked_small.png" alt="tin da luu"><span>Tin đã lưu</span></a></li>
+                <li><a href="#"><img src="images/icons/ic_logout.png" alt="thoat"><span>Thoát</span></a></li>
+            </ul>
+        </div>
+        <div class="arrow_up"></div>
+    </div>
+    <!-- Modal popup -->
+    <div class="modal" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <div class="container-fluid header_bar">
         <div class="row">
             <div class="header_logo col-6  col-md-8 col-lg-2">
@@ -41,7 +77,15 @@
                     <img src="images/icons/ic_post.png">
                     <p>Đăng tin</p>
                 </div>
-                <div class="icon_avatar">
+
+                <!-- nếu có tải khoản đăng nhập rồi -->
+                <!--<div class="icon_avatar has_logged">-->
+                <!--<img src="images/avatar.png">-->
+                <!--<p>Tài khoản</p>-->
+                <!--</div>-->
+
+                <!-- nếu chưa có tài khoản đăng nhập -->
+                <div class="icon_avatar" data-toggle="modal" data-target="#loginModal">
                     <img src="images/avatar.png">
                     <p>Tài khoản</p>
                 </div>

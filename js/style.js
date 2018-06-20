@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+
     var width_windows = $(window).width();
     if(width_windows < 480){
         $('input#btn_search').attr('value','');
@@ -48,7 +49,11 @@ jQuery(document).ready(function($) {
 
     $('.content_info_detail .items_info .item').matchHeight();
 
-    $('.icon_avatar').on('click',function(event){
+    $('.info_contact .item_contact').matchHeight();
+
+    $('.form_postnews .fields_form').matchHeight();
+
+    $('.has_logged').on('click',function(event){
         if($(".cd-popup").hasClass("is-visible")){
             $(".cd-popup").removeClass("is-visible")
         }
@@ -56,8 +61,8 @@ jQuery(document).ready(function($) {
             event.preventDefault();
             $('.cd-popup').addClass("is-visible");
         }
-
     });
+
     // $(window).on("click",function(event){
     //    if($('.cd-popup').has(event.target).length == 0 && !$('.cd-popup').is(event.target)){
     //        if($('.cd-popup').hasClass("is-visible")){
@@ -137,5 +142,42 @@ function validateEmail(form_name,email){
     }
 }
 
-//remove text theo doi trong google button
 
+//drap drop upload image
+"use strict";
+function dragNdrop(event) {
+    jQuery("div.show_error_image span").html("");
+    var fileType = event.target.files[0].type;
+    var ValidImageTypes = ["image/gif", "image/jpeg", "image/png"];
+    if(jQuery.inArray(fileType, ValidImageTypes) < 0 )
+    {
+        jQuery("div.show_error_image span").html("định dạng hình ảnh phải là png/jped/jpg");
+        return false;
+    }
+    var url = URL.createObjectURL(event.target.files[0]);
+    var listPreview = jQuery("div#preview div.childPreview");
+    if(listPreview.length === 0){
+        jQuery("div.clear_both").remove();
+        var div = '<div class="childPreview col-12 col-sm-6 col-md-3 col-lg-2" id = "preview-1"><img src="'+url+'"><div class="deleteImage" id="delete-1" onclick=" deleteImage(this)"><img src="images/icons/ic_delete.png"></div></div>';
+        var div_clear = '<div class="clear_both"></div>';
+        jQuery("div#preview").append(div);
+        jQuery("div#preview").append(div_clear);
+        event.target.value  = "";
+
+    }
+    else{
+       var last_id_array = listPreview.last().attr('id').split("-");
+       var i = Number(last_id_array[1]) + 1;
+       var div_child = '<div class="childPreview col-12 col-sm-6 col-md-3 col-lg-2" id = "preview-'+i+'"><img src="'+url+'"><div class="deleteImage" id="delete-'+i+'" onclick=" deleteImage(this)"><img src="images/icons/ic_delete.png"></div>';
+       var div_clear = '<div class="clear_both"></div>';
+       jQuery("div.clear_both").remove();
+        jQuery("div#preview").append(div_child);
+        jQuery("div#preview").append(div_clear);
+        event.target.value  = "";
+    }
+}
+
+function  deleteImage(element) {
+    var parent_id = element.parentNode.id;
+    jQuery('div#'+parent_id).remove();
+}

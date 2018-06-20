@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADVtnbKvrQYas4qz_ugtEKhit1bvnH9zQ&amp"></script>
     <!-- Syntax Highlighter -->
     <!-- Demo CSS -->
     <!--<link rel="stylesheet" href="css/demo.css" type="text/css" media="screen" />-->
@@ -23,9 +24,88 @@
 </head>
 <body>
     <header>
+        <!-- Popup thông tin nguoi dung -->
         <div class="cd-popup">
-
+            <div class="list_menu_info_popup">
+                <ul>
+                    <li><a href="#"><img src="images/icons/ic_profile.png" alt="thong tin tai khoan"><span>Thông tin tài khoản</span></a></li>
+                    <li><a href="#"><img src="images/icons/ic_manage_posted.png" alt="quan ly tin dang"><span>Quản lý tin đăng</span></a></li>
+                    <li><a href="#"><img src="images/icons/ic_marked_small.png" alt="tin da luu"><span>Tin đã lưu</span></a></li>
+                    <li><a href="#"><img src="images/icons/ic_logout.png" alt="thoat"><span>Thoát</span></a></li>
+                </ul>
+            </div>
+            <div class="arrow_up"></div>
         </div>
+        <!-- Modal popup -->
+        <div class="content_register modal" id="registerModal">
+            <div class="container">
+                <div class="row">
+                    <div class="register col-12">
+                        <div class="register_header">
+                            <div class="register_title">
+                                <h5>Đăng ký</h5>
+                            </div>
+                        </div>
+                        <div class="register_body">
+                            <div class="register_original col-12 col-sm-7">
+                                <form id="register_form" action="" method="post">
+                                    <div>
+                                        <input class="validateFields" type="text" name="tên đăng nhập" id="user_name" placeholder="Họ tên">
+                                        <p class="show_errors_js"></p>
+                                    </div>
+                                    <div>
+                                        <input class="validateFields" type="email" name="email" id="email" placeholder="Email">
+                                        <p class="show_errors_js"></p>
+                                    </div>
+                                    <div>
+                                        <input class="validateFields" type="password" name="mật khẩu" id="password" placeholder="mật khẩu">
+                                        <p class="show_errors_js"></p>
+                                    </div>
+                                    <div>
+                                        <p style="font-size: 12pt">Bằng việc bấm nút TẠO TÀI KHOẢN , bạn đã đồng ý với <a href="" style="font-size: 12pt;text-decoration: none;color:#04638f;text-transform: uppercase">Điều khoản sử dụng</a> của chúng tôi</p>
+                                    </div>
+                                    <div>
+                                        <div class="g-recaptcha" data-sitekey="6Lfrf1wUAAAAACnChw2AuK24vbca77EsIX1i6Z6g"></div>
+                                    </div>
+                                    <div>
+                                        <input type="button" value="Tạo Tài Khoản" class="btn_login" onclick=" validateForm('register_form')">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="register_social col-12 col-sm-5">
+                                <div class="list_social">
+                                    <p>--- Hoặc ---</p>
+                                    <ul>
+                                        <li>
+                                            <img src="images/btn/btn_f_hover.png">
+                                        </li>
+                                        <li>
+                                            <img src="images/btn/btn_g_plus_hover.png">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p style="font-size: 14pt;font-weight: bold;color:#fe0202">Với việc tạo một tài khoản duy nhất, bạn có thể:</p>
+                                <ul style="padding-left: 0">
+                                    <li>
+                                        <p style="font-size: 14pt;color: #333"> <i>*</i> Rao tin CHO THUÊ PHÒNG TRỌ / NHÀ/ CĂN HỘ/ MẶT BẰNG/ TÌM NGƯỜI Ở GHÉP mà chẳng tốn chi phí đăng.</p>
+                                    </li>
+                                    <li>
+                                        <p style="font-size: 14pt;color: #333"> <i>*</i> Hoặc LƯU TIN PHÙ HỢP với mục đích tìm kiếm của bạn.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                        <div class="register_footer">
+                            <p>Bạn đã có tài khoản ?</p>
+                            <a href="#" id="link_login">Đăng nhập ngay</a>
+                            <div style="clear: both"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <div class="container-fluid header_bar">
         <div class="row">
             <div class="header_logo col-6  col-md-8 col-lg-2">
@@ -53,7 +133,15 @@
                     <img src="images/icons/ic_post.png">
                     <p>Đăng tin</p>
                 </div>
-                <div class="icon_avatar">
+
+                <!-- nếu có tải khoản đăng nhập rồi -->
+                <!--<div class="icon_avatar has_logged">-->
+                    <!--<img src="images/avatar.png">-->
+                    <!--<p>Tài khoản</p>-->
+                <!--</div>-->
+
+                <!-- nếu chưa có tài khoản đăng nhập -->
+                <div class="icon_avatar" data-toggle="modal" data-target="#registerModal">
                     <img src="images/avatar.png">
                     <p>Tài khoản</p>
                 </div>
@@ -163,7 +251,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
+                                    <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
                                         <img src="images/icons/contact/ic_contact_info.png"><span class="title_tab">THÔNG TIN LIÊN HỆ</span>
                                         <span class="arrow_down"></span>
                                     </a>
@@ -359,7 +447,55 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tabs-3" role="tabpanel">
-                                    <p>Third Panel</p>
+                                    <input type="hidden" value="24/4 le thi hong" id="address">
+                                    <div style="width: 100%;height: 450px" id="map-canvas-1"></div>
+                                </div>
+                                <div class="tab-pane info_contact" id="tabs-4" role="tabpanel">
+                                    <div class="person_contact item_contact col-12 col-sm-6">
+                                        <div class="logo_contact">
+                                            <img src="images/contact/ic_contact_person.png">
+                                            <div class="description_contact">
+                                                <p style="color:#04638f;font-size: 14pt;font-weight: bold">Người liên hệ</p>
+                                                <p style="color:#333;font-size: 16pt">Phạm Thị Mỹ Linh</p>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="email_contact item_contact col-12 col-sm-6">
+                                        <div class="logo_contact">
+                                            <img src="images/contact/ic_contact_mail.png">
+                                            <div class="description_contact">
+                                                <p style="color:#04638f;font-size: 14pt;font-weight: bold">Email liên hệ</p>
+                                                <p style="color:#333;font-size: 16pt">linhlinh@gmail.com</p>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="phone_contact item_contact col-12 col-sm-6">
+                                        <div class="logo_contact">
+                                            <img src="images/contact/ic_contact_phone.png">
+                                            <div class="description_contact">
+                                                <p style="color:#04638f;font-size: 14pt;font-weight: bold">Điện thoại liên hệ</p>
+                                                <p style="color:#333;font-size: 16pt">01681234568</p>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="address_contact item_contact col-12 col-sm-6">
+                                        <div class="logo_contact">
+                                            <img src="images/contact/ic_contact_address.png">
+                                            <div class="description_contact">
+                                                <p style="color:#04638f;font-size: 14pt;font-weight: bold">Địa chỉ liên hệ</p>
+                                                <p style="color:#333;font-size: 16pt">368 Nguyễn Văn Cừ , P10 , Quận 8 , Thành Phố Hồ Chí Minh</p>
+                                            </div>
+                                            <div style="clear:both"></div>
+                                        </div>
+
+                                    </div>
+                                    <div style="clear: both"></div>
                                 </div>
                             </div>
                         </div>
@@ -758,5 +894,76 @@
     <script src="js/jquery.easing.js"></script>
     <script src="js/jquery.mousewheel.js"></script>
     <script defer src="js/demo.js"></script>
+    <script>
+        var geocoder = new google.maps.Geocoder();;
+        var gmarkers1 = [];
+        var markers1 = [];
+        var infowindow = new google.maps.InfoWindow({
+            content: ''
+        });
+
+        /**
+         * Function to init map
+         */
+
+        function initialize() {
+            var geocoder = new google.maps.Geocoder();
+            var address = document.getElementById("address").value;
+            if(address.length > 0 ){
+                geocoder.geocode({'address': address}, function(results, status) {
+                    if (status === 'OK') {
+                        var lat = results[0].geometry.location.lat();
+                        var lng = results[0].geometry.location.lng();
+                        var myLatLng={ lat: lat,
+                            lng: lng};
+                        var mapOptions = {
+                            zoom: 15,
+                            center: myLatLng,
+                            mapTypeId: google.maps.MapTypeId.TERRAIN
+                        };
+                        var map = new google.maps.Map(document.getElementById('map-canvas-1'), mapOptions);
+                        var marker = new google.maps.Marker({
+                            position: myLatLng,
+                            map: map,
+                            icon:  'images/icons/ic_red_pin.png'
+                        });
+                        marker.setMap(map);
+                    }});
+            }
+        }
+
+        /**
+         * Function to add marker to map
+         */
+
+        function addMarker(marker) {
+
+            var marker1 = new google.maps.Marker({
+                title: title,
+                position: marker,
+                category: category,
+                map: map,
+                icon:  'images/icons/ic_red_pin.png'
+            });
+
+            gmarkers1.push(marker1);
+
+            // Marker click listener
+            google.maps.event.addListener(marker1, 'click', (function (marker1, idx, markers1) {
+                return function () {
+                    console.log('Gmarker 1 gets pushed');
+                    var compiled = '<div><div>' +markers1[idx][0] + ' </div><div>' + markers1[idx][1] + ' </div><div>' +markers1[idx][2] + ' </div><div><button onclick="getid(markers1[' + idx + '][5])">Get</button></div></div>';
+                    var infowindow = new google.maps.InfoWindow({
+                        content: compiled
+                    });
+                    infowindow.open(map, marker1);
+                    map.panTo(this.getPosition());
+                    map.setZoom(20);
+                }
+            })(marker1,i, markers1));
+        }
+        // Init map
+        initialize();
+    </script>
 </body>
 </html>
